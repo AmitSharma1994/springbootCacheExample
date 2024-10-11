@@ -10,22 +10,22 @@ public class Product {
 	@Id
 
 	//@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private long id;
 	private String name;
 	private double price;
 
-	public Product(int id, String name, double price) {
+	public Product(long l, String name, double price) {
 		super();
-		this.id = id;
+		this.id = l;
 		this.name = name;
 		this.price = price;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
