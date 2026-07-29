@@ -1,0 +1,19 @@
+services:
+  redis-node-0:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    profiles: ["infra"]
+  redis-node-1:
+    image: redis:latest
+    ports:
+      - "6380:6379"
+    profiles: ["infra"]
+  app:
+    build: .
+    ports:
+      - "8089:8089"
+    depends_on:
+      - redis-node-0
+      - redis-node-1
+    profiles: ["deploy"] 
